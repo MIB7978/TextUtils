@@ -5,14 +5,17 @@ export default function Text(props) {
     const handleUpClick = ()=>{
        let s = text.toUpperCase();
        setText(s);
+       props.showAlert('change to uppercase','success')
     }
     const handleLoClick = ()=>{
        let s = text.toLowerCase();
        setText(s);
+       props.showAlert('change to lowercase','success')
     }
     const handleCleClick = ()=>{
        let s = "";
        setText(s);
+       props.showAlert('message cleared','success')
     }
    
     const handleChange = (event)=>{
