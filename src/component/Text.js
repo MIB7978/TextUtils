@@ -17,7 +17,12 @@ export default function Text(props) {
        setText(s);
        props.showAlert('message cleared','success')
     }
-   
+    
+    const handleCopy = ()=>{
+          var text = document.getElementById('exampleFormControlTextarea1')
+          text.select()
+          navigator.clipboard.writeText(text.value)
+    }
     const handleChange = (event)=>{
        console.log("letter change")
        setText(event.target.value)
@@ -32,11 +37,12 @@ export default function Text(props) {
                 <h1>Enter the text to analyze below </h1>
                 <textarea className="form-control  mt-3" style={props.Mode==='light'?{backgroundColor:'white'}:{backgroundColor:'gray'}} value={text} id="exampleFormControlTextarea1" onChange={handleChange} rows="12"></textarea>
             </div>
+        </div>
             <div className='container'>
-            <button className='btn btn-primary mx-3' onClick={handleUpClick} >uppercase</button>
-            <button className='btn btn-primary mx-3' onClick={handleLoClick} >lowercase</button>
-            <button className='btn btn-primary mx-3' onClick={handleCleClick} >Clear</button>
-            </div>
+            <button className='btn btn-primary mx-1 my-1' onClick={handleUpClick} >uppercase</button>
+            <button className='btn btn-primary mx-1 my-1' onClick={handleLoClick} >lowercase</button>
+            <button className='btn btn-primary mx-1 my-1' onClick={handleCleClick} >Clear Text</button>
+            <button className='btn btn-primary mx-1 my-1' onClick={handleCopy}>copy text Text</button>
             
       <h3 className='my-3'>Text Summary</h3>
       <p>{text.split(" ").length} words and {text.length} are characters</p>
@@ -45,9 +51,9 @@ export default function Text(props) {
      <h2 className='my-3 '>Preview</h2>
      <p>{text}</p>
       
-        </div>
     
 
+            </div>
 
         </>
     )

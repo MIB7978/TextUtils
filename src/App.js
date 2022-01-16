@@ -1,11 +1,11 @@
 import "./App.css";
-import About from "./component/About";
+// import About from "./component/About";
 import Navbar from "./component/Navbar";
 import Text from "./component/Text";
 import React, { useState } from "react";
 // import Alert from "./component/Ale/rt";
 
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+// import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
   const [alert, setAlert] = useState(null);
@@ -35,17 +35,17 @@ function App() {
   };
   return (
     <>
-    <Router>
+    {/* <Router> */}
     <Navbar Mode={mode} togglemode={togglemode} />
-    <Switch>
-      <Route path="/about">
+    {/* <Switch> */}
+      {/* <Route path="/about">
       <About/>
-      </Route>
-      <Route path="/">
+      </Route> */}
+      {/* <Route path="/"> */}
       <Text Mode={mode}/>
-      </Route>
+      {/* </Route>
       </Switch>
-      </Router>
+      </Router> */}
     </>
   );
 }
